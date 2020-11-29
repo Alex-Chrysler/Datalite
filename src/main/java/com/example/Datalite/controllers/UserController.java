@@ -25,6 +25,7 @@ public class UserController {
         return "Added user with id: "+ user.getId();
     }
 
+    @CrossOrigin
     @GetMapping("/findAllUsers")
     public List<User> getUsers(){
         return repository.findAll();
