@@ -19,16 +19,23 @@ public class UserController {
         return "Hello World";
     }
 
-    @PostMapping("/addUser")
-    public String saveUser(@RequestBody User user){
-        repository.save(user);
-        return "Added user with id: "+ user.getId();
-    }
+//    @PostMapping("/addUser")
+//    public String saveUser(@RequestBody User user){
+//        repository.save(user);
+//        return "Added user with id: "+ user.getId();
+//    }
 
     @CrossOrigin
     @GetMapping("/findAllUsers")
     public List<User> getUsers(){
         return repository.findAll();
+    }
+
+    @CrossOrigin
+    @PostMapping("/findAllUsers")
+    public String saveUser(@RequestBody User user){
+        repository.save(user);
+        return "Added user with id: "+ user.getId();
     }
 
     @GetMapping("/findAllUsers/{id}")

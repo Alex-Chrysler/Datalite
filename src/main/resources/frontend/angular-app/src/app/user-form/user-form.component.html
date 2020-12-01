@@ -1,1 +1,28 @@
-<p>user-form works!</p>
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <div class="form-group">
+        <label for="name">First Name</label>
+        <input type="text" [(ngModel)]="user.firstName"
+               class="form-control"
+               id="name"
+               name="name"
+               placeholder="Enter first your name"
+               required #name="ngModel">
+      </div>
+      <div [hidden]="!name.pristine" class="alert alert-danger">Last name is required</div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" [(ngModel)]="user.lastName"
+               class="form-control"
+               id="email"
+               name="email"
+               placeholder="Enter your last name"
+               required #email="ngModel">
+        <div [hidden]="!name.pristine" class="alert alert-danger">Last name is required</div>
+      </div>
+      <button type="submit" [disabled]="!userForm.form.valid"
+              class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>
