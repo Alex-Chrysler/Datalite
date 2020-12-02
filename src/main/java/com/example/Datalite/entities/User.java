@@ -15,7 +15,7 @@ public class User {
     @Id
     private String id;
     private String firstName;
-    private String lastName;
+    private String email;
 
     public String getId() {
         return id;
@@ -33,11 +33,11 @@ public class User {
         this.firstName = firstName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getEmail() {
+        return email;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
